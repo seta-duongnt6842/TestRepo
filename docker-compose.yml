@@ -3,6 +3,16 @@ networks:
   app-network:
     driver: bridge
 services:
+  database:
+    image: 'postgres:latest'
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: test
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data/
   test-project-api:
     build:
       context: .
@@ -13,9 +23,9 @@ services:
     ports:
       - "8888:80"
     logging:
-            driver: "json-file"
-            options:
-                max-size: "50m"
+      driver: "json-file"
+      options:
+        max-size: "50m"
     environment:
       ASPNETCORE_ENVIRONMENT: 'Docker'
     networks:

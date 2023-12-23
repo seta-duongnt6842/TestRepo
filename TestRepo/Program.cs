@@ -6,16 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer().AddHttpContextAccessor();
 builder.Services.AddSwaggerGen();
-builder
-    .Services
-    .AddRepository(
-        builder.Configuration.GetConnectionString("default")!,
-        string.Equals(
-            builder.Environment.EnvironmentName,
-            "Docker" /*"Local"*/,
-            StringComparison.OrdinalIgnoreCase
-        )
-    );
+builder.Services.AddRepository(builder.Configuration.GetConnectionString("default")!);
 builder
     .Services
     .AddTransient(p =>
