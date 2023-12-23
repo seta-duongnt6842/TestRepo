@@ -27,6 +27,6 @@ app.UseHttpsRedirection();
 
 await app.InitialDb();
 
-app.MapGroup("/person").MapPersonRoute();
+app.MapGroup("/person").WithTags("Person").HandlePersonRoute();
 
 app.Run();

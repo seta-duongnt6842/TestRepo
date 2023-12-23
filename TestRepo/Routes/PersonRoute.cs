@@ -7,7 +7,12 @@ namespace TestRepo.Routes;
 
 public static class PersonRoute
 {
-    public static void MapPersonRoute(this RouteGroupBuilder route)
+    /// <summary>
+    /// this consumes the <see cref="RouteGroupBuilder"/> and handle all logic and child route. <br />
+    /// This method must be and mean to be called last of <c>Map{Verb}</c> chain, as it return <see cref="Void"/> 
+    /// </summary>
+    /// <param name="route"></param>
+    public static void HandlePersonRoute(this RouteGroupBuilder route)
     {
         route.MapGet("/", GetAllPerson);
         route.MapGet("/{id:int}", GetPerson);
