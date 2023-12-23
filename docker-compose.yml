@@ -20,5 +20,3 @@ services:
       ASPNETCORE_ENVIRONMENT: 'Docker'
     networks:
       - app-network
-    depends_on: 
-      - database
