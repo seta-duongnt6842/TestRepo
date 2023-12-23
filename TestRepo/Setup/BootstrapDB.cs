@@ -1,4 +1,4 @@
-﻿namespace TestRepo.Utils;
+﻿namespace TestRepo.Setup;
 
 public static class BootstrapDb
 {
