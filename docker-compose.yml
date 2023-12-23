@@ -11,8 +11,6 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: test
-    volumes:
-      - ./db-data/:/var/lib/postgresql/data:z
     networks:
       - app-network
 
