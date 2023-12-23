@@ -3,7 +3,7 @@ networks:
   app-network:
     driver: bridge
 services:
-  mini-project-api:
+  test-project-api:
     build:
       context: .
       dockerfile: TestRepo/Dockerfile
