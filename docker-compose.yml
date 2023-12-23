@@ -3,6 +3,19 @@ networks:
   app-network:
     driver: bridge
 services:
+  database:
+    image: 'postgres:latest'
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: test
+    networks:
+      - app-network
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data/
+
   test-project-api:
     build:
       context: .
@@ -20,3 +33,5 @@ services:
       ASPNETCORE_ENVIRONMENT: 'Docker'
     networks:
       - app-network
+    depends_on:
+      - database
