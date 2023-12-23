@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
     <PackageReference Include="TanvirArjel.EFCore.GenericRepository" Version="6.0.2" />
     <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="8.101.1.3" />
