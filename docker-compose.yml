@@ -1,0 +1,22 @@
+version: '3'
+networks:
+  app-network:
+    driver: bridge
+services:
+  mini-project-api:
+    build:
+      context: .
+      dockerfile: TestRepo/Dockerfile
+    container_name: test-project-api
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8888:80"
+    logging:
+            driver: "json-file"
+            options:
+                max-size: "50m"
+    environment:
+      ASPNETCORE_ENVIRONMENT: 'Docker'
+    networks:
+      - app-network
