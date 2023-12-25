@@ -3,7 +3,7 @@ networks:
   app-network:
     driver: bridge
 volumes:
-  db-data: {}
+  db-data:
 
 services:
   database:
@@ -18,7 +18,7 @@ services:
     networks:
       - app-network
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql
 
   test-project-api:
     build:
