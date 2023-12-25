@@ -10,7 +10,7 @@ services:
     image: 'postgres:latest'
     ports:
       - 5432:5432
-    container_name: postgresql
+    container_name: mypostgreDB
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 123
