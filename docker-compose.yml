@@ -15,7 +15,7 @@ services:
     networks:
       - app-network
     volumes:
-      - ./db-data/:/var/lib/postgresql/data/
+      - ./db-data/:/var/lib/postgresql/data:Z
 
   test-project-api:
     build:
