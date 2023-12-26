@@ -1,3 +1,3 @@
-docker build -t haidoc78/test:latest -f TestRepo/Dockerfile .
-docker login -u haidoc78 -p huuhai@#$%2207
-docker push haidoc78/test:latest
+docker build -t duongnguyenseta/duongnguyen:latest -f TestRepo/Dockerfile .
+docker login -u piong521994@gmail.com -p Duong521994
+docker push duongnguyenseta/duongnguyen:latest
